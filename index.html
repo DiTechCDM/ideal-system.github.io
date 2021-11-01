@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="viewport" content="height=device-height,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Quiz - Multiple Choice Questions</title>
+
+    <link rel="stylesheet" href="./Assets/CSS/style.css">
+    <link rel="shortcut icon" href="./Assets/Img/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="quizArea">
+        <section id="boy-animate" style="display: block;">
+              <h1 class="ml14 mc_quiz">
+                <span class="text-wrapper">
+                  <span class="letters">MultiChoice Questions</span>
+                  <span class="line"></span>
+                </span>
+              </h1>
+            <div class="row-sm-2">
+                <div class="col-sm-2 absolute">
+                    <img src="./Assets/Img/output-onlinegiftools.gif" id="boy-img" alt="">
+                    <div class="multipleChoiceQues">
+                        <div class="my-progress">
+                            <progress class="my-progress-bar" min="0" max="100" value="0" step="9"
+                                aria-labelledby="my-progress-completion"></progress>
+                            <p id="my-progress-completion" class="js-my-progress-completion sr-only" aria-live="polite">
+                                0%
+                                complete
+                            </p>
+                        </div>
+                        <div class="quizBox">
+                            <div class="question">
+                            </div>
+                            <div class="answerOptions">
+                                <div id="isCorrect"></div>
+                            </div>
+                            <div class="buttonArea">
+                                <p id="answer1"></p>
+                                <p id="answer2"></p>
+                                <!-- Function Button -->
+                                <button id="forward" style="display: none;position: absolute;left: 0;" onclick="check()"
+                                    class="noselect">Next</button>
+                                <button id="next" onclick="play()" class="noselect hidden">Submit</button>
+                                <!-- Function Button -->
+                                <audio id="audio" src="./Assets/audio/Copines - Baby Voice.mp3"></audio>
+                                <button id="submit" onclick="hide()" class="hidden submit">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="particles-js" style="position: absolute;"></div>
+                </div>
+                <div class="col-sm-2" id="hide-mob">
+                    <div id="show" style="width:100%;height:0;padding-bottom:100%;position:relative;margin: auto;">
+                        <!-- Correct Video -->
+                        <video width="500" height="500" id="video-correct" style="display: none;margin: auto;" playsinline autoplay loop muted>
+                            <source src="./Assets/Correct.mp4" type="video/mp4" />
+                        </video>
+                        <audio id="audio1" src="./Assets/audio/Correct Answer.mp3"></audio>
+                        <audio id="audio2" src="./Assets/audio/Wrong Answer.mp3"></audio>
+                        <!-- Incorrect video -->
+                        <video width="500" height="500" id="video-incorrect" style="display: none;margin: auto;" playsinline autoplay loop muted>
+                            <source src="./Assets/Incorrect-video.mp4" type="video/mp4" />
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="resultArea">
+            <div style="display: flex;justify-content: center;">
+                <div class="FireWork" id="firework1" style="position: absolute;"><img
+                        src="./Assets/Img/7fa635fc7a0caad3-.gif" alt="">
+                </div>
+            </div>
+            <audio src="./Assets/audio/Fireworks New Year.mp3" id="firework"></audio>
+            <div class="resultPage1">
+                <div class="resultBox">
+                    <h1>Your ScoreBoard</h1>
+                </div>
+                <div class="briefchart">
+                    <div id="_cir_progress" class="emojis__row">
+                        <div class="emojis__scoreboard">
+                            <p style="color: green;" class="_text_cor"></p> <span><img src="./Assets/Img/Correct.gif"
+                                    style="width: 10%;" alt=""></span>
+                        </div>
+                        <div class="emojis__scoreboard">
+                            <p style="color: red;" class="_text_incor"></p> <span><img style="width: 10%;"
+                                    src="./Assets/Img/Incorrect.gif" alt=""></span>
+                        </div>
+                    </div>
+                    <h3 id="show-info"></h3>
+                </div>
+
+
+
+                <div class="resultBtns">
+                    <button onclick="fHide()" class="viewanswer">Answers</button>
+                    <button class="replay"><span>Replay</span></button>
+                </div>
+            </div>
+
+            <div class="resultPage2">
+                <h1>Your Result</h1>
+                <div class="chartBox">
+                    <canvas id="myChart" width="400" height="400"></canvas>
+                </div>
+                <button class="backBtn">Back</button>
+            </div>
+
+            <div class="resultPage3">
+                <h1>Your Answers</h1>
+                <div class="allAnswerBox">
+
+                </div>
+                <button class="backBtn">Back</button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./Assets/JS/particles.min.js"></script>
+    <script src="./Assets/JS/app.js"></script>
+    <script src="./Assets/JS/index.js"></script>
+    <script src="./Assets/JS/text-animation.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+
+</html>
